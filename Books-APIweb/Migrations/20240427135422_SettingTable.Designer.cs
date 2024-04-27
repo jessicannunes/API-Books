@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Books_APIweb.Migrations
 {
     [DbContext(typeof(BookDbContext))]
-    [Migration("20240423101156_SettingTable")]
+    [Migration("20240427135422_SettingTable")]
     partial class SettingTable
     {
         /// <inheritdoc />
@@ -33,8 +33,8 @@ namespace Books_APIweb.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("Isbn")
-                        .HasColumnType("int");
+                    b.Property<long>("Isbn")
+                        .HasColumnType("bigint");
 
                     b.Property<decimal?>("Price")
                         .IsRequired()
@@ -42,8 +42,8 @@ namespace Books_APIweb.Migrations
 
                     b.Property<string>("PublishingCompany")
                         .IsRequired()
-                        .HasMaxLength(80)
-                        .HasColumnType("varchar(80)");
+                        .HasMaxLength(160)
+                        .HasColumnType("varchar(160)");
 
                     b.Property<string>("Title")
                         .IsRequired()

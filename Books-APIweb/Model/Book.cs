@@ -10,7 +10,7 @@ namespace Books_APIweb.Model
         public int Id { get; set; }
 
         [Required]
-        [Column(TypeName="int")]
+        [Column(TypeName="bigint")]
         public int Isbn { get; set; }
 
         [Required]
@@ -18,7 +18,7 @@ namespace Books_APIweb.Model
         public string? Title { get; set; }
 
         [Required]
-        [StringLength (80)]
+        [StringLength (160)]
         public string? PublishingCompany{ get; set; }
 
         [Required]
